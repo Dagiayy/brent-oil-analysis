@@ -1,0 +1,55 @@
+* text=auto
+# Automatically normalize line endings
+* text=auto
+
+# Treat all Python files as text and normalize line endings
+*.py text
+
+# CSV and Excel files as text (optional)
+*.csv text
+*.tsv text
+*.xlsx binary
+*.xls binary
+
+# JSON, JS, JSX, TS, TSX files
+*.json text
+*.js text
+*.jsx text
+*.ts text
+*.tsx text
+
+# HTML, CSS, and Markdown files
+*.html text
+*.css text
+*.scss text
+*.md text
+
+# Shell scripts (preserve LF)
+*.sh text eol=lf
+
+# Batch files (preserve CRLF on Windows)
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Images and binary assets
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg text
+
+# Fonts and binaries
+*.ttf binary
+*.woff binary
+*.woff2 binary
+
+# Node modules (optional - if you accidentally commit it)
+node_modules/** binary
+
+# Avoid normalization of lock files (optional)
+package-lock.json text eol=lf
+yarn.lock text eol=lf
+
+# Ensure Windows line endings for VS Code settings (optional)
+.vscode/** text eol=crlf
