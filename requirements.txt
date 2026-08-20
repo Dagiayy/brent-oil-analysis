@@ -5,7 +5,7 @@ scipy>=1.11,<2.0
 openpyxl>=3.1,<4.0        # reads data/raw/events.xlsx
 
 # Statistics & Bayesian modeling
-statsmodels>=0.14,<0.15   # ADF stationarity test
+statsmodels>=0.14,<0.16   # ADF stationarity test
 pymc>=5.10,<7.0
 arviz>=0.17,<2.0
 
