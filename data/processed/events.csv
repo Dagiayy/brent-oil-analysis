@@ -1,0 +1,12 @@
+Event,Start Date,Description,Region,Type
+Gulf War,1990-08-02,"Iraq invades Kuwait, disrupting oil supply",Middle East,Conflict
+9/11 Attacks,2001-09-11,Global economic uncertainty from terror attack,Global,Geopolitical
+Iraq War,2003-03-20,"U.S. invasion of Iraq, major oil region",Middle East,Conflict
+2008 Financial Crisis,2008-09-15,"Global economic meltdown, oil demand collapse",Global,Economic
+Arab Spring,2010-12-17,Political unrest in oil-producing MENA nations,MENA,Political
+Chinese Slowdown,2015-01-15,Decline in demand from top oil importer,China,Economic
+2016 OPEC Output Cut,2016-11-30,OPEC reduces oil production to boost prices,OPEC,OPEC Decision
+Iran Sanctions (US),2018-08-06,U.S. sanctions limit Iran's oil exports,Middle East,Sanction
+COVID-19 Pandemic,2020-03-11,Global demand collapse due to lockdowns,Global,Health Crisis
+OPEC+ COVID Deal,2020-04-12,Agreement to massively reduce output,OPEC+,OPEC Decision
+Russia-Ukraine War,2022-02-24,Conflict disrupts global energy supply chain,Europe/Eurasia,Conflict
