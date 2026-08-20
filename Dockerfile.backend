@@ -1,0 +1,25 @@
+# API service image: serves precomputed artifacts (data/processed, outputs/)
+# via Flask/gunicorn. Does NOT include pymc/arviz/statsmodels - see
+# dashboard/backend/requirements.txt for why.
+FROM python:3.11-slim
+
+WORKDIR /app
+
+COPY dashboard/backend/requirements.txt ./dashboard/backend/requirements.txt
+RUN pip install --no-cache-dir -r dashboard/backend/requirements.txt
+
+COPY src/config.py src/config.py
+COPY src/__init__.py src/__init__.py
+COPY dashboard/backend/ dashboard/backend/
+COPY data/ data/
+COPY outputs/ outputs/
+
+ENV FLASK_HOST=0.0.0.0 \
+    FLASK_PORT=5000 \
+    FLASK_DEBUG=false \
+    PYTHONUNBUFFERED=1
+
+EXPOSE 5000
+WORKDIR /app/dashboard/backend
+
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--workers", "2", "app:app"]
