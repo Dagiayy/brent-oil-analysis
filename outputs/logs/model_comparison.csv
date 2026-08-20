@@ -1,0 +1,4 @@
+,rank,elpd_diff,dse,p_worse,diag_diff,diag_elpd,p,elpd,se,weight
+null,0,0.0,0.0,,,2 k̂ > 0.64,32.8,20200.0,400.0,0.71
+mean_shift,1,-0.0,0.69,0.64,|elpd_diff| < 4,13 k̂ > 0.64,31.5,20200.0,400.0,0.0
+mean_vol_shift,2,-120.0,39.0,1.0,,3 k̂ > 0.64,822.8,20100.0,400.0,0.29

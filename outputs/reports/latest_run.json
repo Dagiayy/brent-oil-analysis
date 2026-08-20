@@ -1,0 +1,156 @@
+{
+  "run_started_utc": "2026-08-20T07:57:20.169431+00:00",
+  "variant": "mean_shift",
+  "lineage": {
+    "raw_prices": {
+      "source": "D:\\Kifiya AI & ML\\brent-oil-analysis-main\\brent-oil-analysis-main\\data\\raw\\BrentOilPrices.csv",
+      "sha256_16": "3a0f812f7bee3d2c",
+      "n_rows": 9011
+    },
+    "events": {
+      "source": "D:\\Kifiya AI & ML\\brent-oil-analysis-main\\brent-oil-analysis-main\\data\\events.xlsx",
+      "sha256_16": "c9d35828b4ba4b54",
+      "n_events": 11
+    }
+  },
+  "data_quality": {
+    "n_rows": 9011,
+    "n_duplicate_dates": 0,
+    "n_missing_after_reindex": 0,
+    "date_range": [
+      "1987-05-20",
+      "2022-11-14"
+    ],
+    "n_price_outliers_iqr": 433,
+    "outlier_dates": [
+      "1987-12-14",
+      "1987-12-17",
+      "1987-12-22",
+      "1988-01-05",
+      "1988-01-06",
+      "1988-01-08",
+      "1988-07-07",
+      "1988-07-18",
+      "1988-09-13",
+      "1988-10-10",
+      "1988-10-14",
+      "1988-10-18",
+      "1988-10-24",
+      "1988-11-17",
+      "1988-11-22",
+      "1988-11-25",
+      "1988-12-27",
+      "1989-01-23",
+      "1989-04-19",
+      "1989-05-02",
+      "1989-05-17",
+      "1989-05-22",
+      "1990-01-03",
+      "1990-01-08",
+      "1990-04-19"
+    ],
+    "notes": [
+      "433 daily moves fall outside 1.5*IQR of the daily return distribution (retained - large moves are expected around real shocks, not removed as errors)."
+    ]
+  },
+  "eda": {
+    "summary_statistics": {
+      "n_observations": 9010,
+      "date_range": [
+        "1987-05-21",
+        "2022-11-14"
+      ],
+      "price": {
+        "count": 9010.0,
+        "mean": 48.4241,
+        "std": 32.8604,
+        "min": 9.1,
+        "25%": 19.05,
+        "50%": 38.6,
+        "75%": 70.095,
+        "max": 143.95
+      },
+      "log_return": {
+        "count": 9010.0,
+        "mean": 0.000179,
+        "std": 0.025532,
+        "min": -0.643699,
+        "25%": -0.011154,
+        "50%": 0.000402,
+        "75%": 0.012127,
+        "max": 0.412023
+      },
+      "annualized_volatility": 0.4053,
+      "skewness": -1.7444,
+      "kurtosis_excess": 65.9047
+    },
+    "adf_test": {
+      "series_name": "Log_Return",
+      "adf_statistic": -16.4271,
+      "p_value": 0.0,
+      "n_lags": 28,
+      "n_obs": 8981,
+      "critical_values": {
+        "1%": -3.4311,
+        "5%": -2.8619,
+        "10%": -2.5669
+      },
+      "is_stationary_5pct": true
+    }
+  },
+  "model": {
+    "config": {
+      "draws": 2000,
+      "tune": 1500,
+      "chains": 4,
+      "target_accept": 0.95,
+      "random_seed": 42,
+      "max_r_hat": 1.01,
+      "min_ess_bulk": 400.0
+    },
+    "change_point": {
+      "model_name": "mean_shift",
+      "change_index": 4762,
+      "change_date": "2006-02-02",
+      "tau_mean": 4762.25,
+      "tau_hdi_3_97": [
+        115.34,
+        9008.49
+      ],
+      "diagnostics": {
+        "max_r_hat": 1.0092,
+        "min_ess_bulk": 415.2,
+        "n_divergences": 0,
+        "reliable": true,
+        "warnings": []
+      }
+    },
+    "diagnostics": {
+      "max_r_hat": 1.0092,
+      "min_ess_bulk": 415.2,
+      "n_divergences": 0,
+      "reliable": true,
+      "warnings": []
+    },
+    "event_alignment": {
+      "change_date": "2006-02-02",
+      "nearest_event": null,
+      "nearest_event_date": null,
+      "nearest_event_type": null,
+      "days_to_nearest_event": null,
+      "mean_return_before": 0.000264,
+      "mean_return_after": 8.4e-05,
+      "annualized_vol_before": 0.3733,
+      "annualized_vol_after": 0.4384,
+      "price_before": 65.64,
+      "price_after": 62.69,
+      "pct_price_change_30d": -4.49
+    }
+  },
+  "narrative": {
+    "text": "The model identifies the most probable structural break in Brent log returns at 2006-02-02. The mean daily log return fell from 0.00026 before the break to 0.00008 after it, while annualized volatility moved from 37.3% to 43.8%. No catalogued event falls within the configured time window of this change point. Timing coincidence does not establish that the event caused the shift in oil price behavior.",
+    "source": "template",
+    "model": null
+  },
+  "run_finished_utc": "2026-08-20T08:01:40.715277+00:00"
+}
