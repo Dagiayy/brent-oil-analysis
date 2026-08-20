@@ -1,0 +1,22 @@
+# Core data stack
+pandas>=2.1,<3.0
+numpy>=1.26,<3.0
+scipy>=1.11,<2.0
+openpyxl>=3.1,<4.0        # reads data/raw/events.xlsx
+
+# Statistics & Bayesian modeling
+statsmodels>=0.14,<0.15   # ADF stationarity test
+pymc>=6.0,<7.0
+arviz>=1.0,<2.0
+
+# Plotting
+matplotlib>=3.8,<4.0
+seaborn>=0.13,<0.14
+
+# API (dashboard/backend)
+flask>=3.0,<4.0
+flask-cors>=4.0,<5.0
+python-dotenv>=1.0,<2.0
+
+# Notebooks (optional, only needed to open notebooks/*.ipynb)
+jupyter>=1.0,<2.0
