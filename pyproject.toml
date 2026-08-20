@@ -1,3 +1,34 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "brent-oil-analysis"
+version = "1.0.0"
+description = "Production-grade Bayesian change-point analysis of Brent crude oil prices with event alignment and interactive dashboard"
+readme = "README.md"
+authors = [
+    { name = "Dagmawi Ayenew", email = "ayenewdagmawi@gmail.com" }
+]
+license = { file = "LICENSE" }
+requires-python = ">=3.11"
+dependencies = [
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "pymc>=6.0.0,<7.0.0",
+    "arviz>=1.0.0,<2.0.0",
+    "flask>=3.0.0",
+    "flask-cors>=4.0.0",
+    "python-dotenv>=1.0.0",
+    "openpyxl>=3.1.0",
+    "statsmodels>=0.14.0",
+    "loguru>=0.7.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/Dagiayy/brent-oil-analysis"
+Repository = "https://github.com/Dagiayy/brent-oil-analysis.git"
+
 [tool.pytest.ini_options]
 pythonpath = ["."]
 testpaths = ["tests"]
